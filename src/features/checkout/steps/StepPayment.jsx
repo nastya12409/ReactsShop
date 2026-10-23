@@ -8,7 +8,7 @@ const METHODS = [
   { value: 'cash', label: '💵 Готівкою при отриманні', hint: 'оплата кур’єру або у відділенні' },
 ];
 
-// Крок 3: спосіб оплати. Підтвердження створює замовлення
+
 export default function StepPayment({ onBack, onConfirm, submitting }) {
   const data = useAppSelector((state) => state.checkout.data);
 

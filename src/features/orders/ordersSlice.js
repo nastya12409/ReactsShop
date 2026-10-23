@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { load } from '../../shared/utils/storage';
 
-// Історія замовлень зберігається локально (наш "сервіс замовлень")
+ 
 const ordersSlice = createSlice({
   name: 'orders',
   initialState: load('reactshop:orders', []),

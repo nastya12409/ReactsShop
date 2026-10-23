@@ -9,7 +9,7 @@ const METHODS = [
   { value: 'pickup', label: 'Самовивіз (безкоштовно)', hint: 'з магазину, Київ' },
 ];
 
-// Крок 2: спосіб доставки та адреса
+
 export default function StepDelivery({ onNext, onBack }) {
   const data = useAppSelector((state) => state.checkout.data);
 

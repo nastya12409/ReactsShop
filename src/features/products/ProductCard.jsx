@@ -6,7 +6,7 @@ import { selectIsFavorite, toggleFavorite } from '../favorites/favoritesSlice';
 import { money } from '../../shared/utils/money';
 import Rating from '../../shared/ui/Rating';
 
-// Картка товару: мемоізована, щоб перемальовування одного не зачіпало інші
+
 const ProductCard = memo(function ProductCard({ product }) {
   const dispatch = useAppDispatch();
   const isFavorite = useAppSelector(selectIsFavorite(product.id));

@@ -11,8 +11,7 @@ import ProductsTable from '../features/admin/ProductsTable';
 import ProductForm from '../features/admin/ProductForm';
 import { ProductGridSkeleton } from '../shared/ui/Skeleton';
 
-// Адмін-розділ: таблиця товарів з сортуванням за стовпцями,
-// додаванням, редагуванням і видаленням через API-шар.
+
 export default function AdminPage() {
   const user = useAppSelector((state) => state.auth.user);
   const { data, isFetching, isError, refetch } = useGetProductsQuery();

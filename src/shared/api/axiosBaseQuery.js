@@ -1,7 +1,6 @@
 import { http } from './http';
 
-// Міст між RTK Query і axios: дозволяє використовувати кешування
-// RTK Query разом з інтерсепторами власного екземпляра axios.
+
 export const axiosBaseQuery =
   ({ instance = http } = {}) =>
   async ({ url, method = 'GET', data, params }) => {

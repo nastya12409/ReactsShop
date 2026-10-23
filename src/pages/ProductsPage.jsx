@@ -10,8 +10,7 @@ import { ProductGridSkeleton } from '../shared/ui/Skeleton';
 const PAGE_SIZE = 12;
 const DEFAULT_MAX_PRICE = 2000;
 
-// Каталог: завантаження з API (кеш RTK Query), фільтри/пошук/сортування
-// на клієнті, пагінація. Стан фільтрів — у query-параметрах URL.
+
 export default function ProductsPage() {
   const { data, isFetching, isError, error, refetch } = useGetProductsQuery();
   const [params, setParams] = useSearchParams();
@@ -23,7 +22,7 @@ export default function ProductsPage() {
   const sort = params.get('sort') ?? 'default';
   const page = Math.max(1, Number(params.get('page') ?? 1));
 
-  // Пошук іде через debounce: URL оновлюється за 300 мс після останнього символу
+  
   const [text, setText] = useState(q);
   const debounced = useDebounce(text, 300);
   useEffect(() => {
@@ -75,7 +74,7 @@ export default function ProductsPage() {
     const isEmpty = value === '' || value === 0 || value == null;
     if (!isEmpty) next.set(key, String(value));
     else next.delete(key);
-    next.delete('page'); // зміна фільтра повертає на першу сторінку
+    next.delete('page'); 
     setParams(next);
   };
 

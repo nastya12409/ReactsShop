@@ -18,7 +18,7 @@ const product = {
   title: 'iPhone 15',
   price: 1000,
   thumbnail: 'x.jpg',
-  discountPercentage: 10, // у кошику ціна зі знижкою: 900
+  discountPercentage: 10, 
 };
 
 const initial = { items: [], promo: null };
@@ -43,7 +43,7 @@ describe('cartSlice', () => {
     expect(state.items[0].qty).toBe(2);
     state = cartReducer(state, decQty(1));
     expect(state.items[0].qty).toBe(1);
-    state = cartReducer(state, decQty(1)); // остання одиниця — видалення
+    state = cartReducer(state, decQty(1)); 
     expect(state.items).toHaveLength(0);
   });
 
@@ -73,14 +73,13 @@ describe('cartSlice', () => {
 
   it('селектори рахують суми зі знижкою товару і промокодом', () => {
     let state = { cart: cartReducer(initial, addToCart(product)) };
-    state = cartReducer(state.cart, incQty(1)); // qty = 2, ціна за шт. 900
+    state = cartReducer(state.cart, incQty(1)); 
     const withQty = { cart: state };
 
     expect(selectCartCount(withQty)).toBe(2);
-    expect(selectCartSubtotal(withQty)).toBe(1800); // 900 × 2
-
+    expect(selectCartSubtotal(withQty)).toBe(1800); 
     const promoState = {
-      cart: cartReducer(state, applyPromo('SALE10')), // −10% від суми
+      cart: cartReducer(state, applyPromo('SALE10')), 
     };
     expect(selectCartDiscount(promoState)).toBeCloseTo(180);
     expect(selectCartTotal(promoState)).toBeCloseTo(1620);

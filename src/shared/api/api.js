@@ -2,16 +2,13 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 import { http } from './http';
 import { axiosBaseQuery } from './axiosBaseQuery';
 
-// DummyJSON — фейковий API: зміни "зберігаються" лише до перезавантаження.
-// Після мутацій кеш каталогу оновлюємо вручну (updateQueryData),
-// щоб таблиця адмін-розділу не "відкочувалась" після refetch.
+
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: axiosBaseQuery({ instance: http }),
   tagTypes: ['Products', 'Product'],
   endpoints: (builder) => ({
-    // limit=0 — API повертає весь каталог (≈190 товарів) одним запитом;
-    // далі фільтри/сортування/пагінація працюють на клієнті.
+    
     getProducts: builder.query({
       query: () => ({ url: '/products', params: { limit: 0 } }),
       providesTags: ['Products'],

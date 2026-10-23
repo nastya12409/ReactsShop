@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
-// Error Boundary на рівні застосунку: ловить будь-яку помилку рендеру
-// і показує зрозуміле повідомлення замість білого екрана.
+
 export class ErrorBoundary extends Component {
   state = { error: null };
 

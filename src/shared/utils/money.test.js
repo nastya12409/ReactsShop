@@ -9,7 +9,7 @@ describe('money.js', () => {
 
   it('unitPrice враховує знижку товару', () => {
     expect(unitPrice({ price: 1000, discountPercentage: 10 })).toBe(900);
-    expect(unitPrice({ price: 50 })).toBe(50); // без знижки
+    expect(unitPrice({ price: 50 })).toBe(50); 
   });
 
   it('промокоди містять очікувані відсотки', () => {

@@ -2,12 +2,12 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { load } from '../../shared/utils/storage';
 import { PROMOS, unitPrice } from '../../shared/utils/money';
 
-// Кошик персиститься у localStorage: початковий стан читаємо звідти
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState: load('reactshop:cart', { items: [], promo: null }),
   reducers: {
-    // Додавання: та сама картка збільшує кількість, а не дублюється
+  
     addToCart(state, action) {
       const product = action.payload;
       const item = state.items.find((i) => i.id === product.id);
@@ -71,7 +71,7 @@ export const {
 
 export default cartSlice.reducer;
 
-// Селектори: перерахунок лише при зміні items (memoized)
+
 const selectItems = (state) => state.cart.items;
 
 export const selectCartItems = selectItems;

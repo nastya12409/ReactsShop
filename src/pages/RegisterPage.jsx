@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { register as registerUser } from '../features/auth/authSlice';
 import { registerSchema } from '../shared/utils/validation';
 
-// Реєстрація: після успішного створення акаунта користувач залогінений
+
 export default function RegisterPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

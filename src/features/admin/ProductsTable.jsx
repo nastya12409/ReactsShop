@@ -8,7 +8,7 @@ const COLUMNS = [
   { key: 'stock', label: 'Кількість' },
 ];
 
-// Таблиця товарів: сортування за стовпцями, кнопки редагування/видалення
+
 export default function ProductsTable({ rows, sort, onSort, onEdit, onDelete }) {
   return (
     <div className="table-wrap">

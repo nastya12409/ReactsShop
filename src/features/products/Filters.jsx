@@ -13,8 +13,7 @@ const RATING_OPTIONS = [
   { value: 4.5, label: 'Від 4,5★' },
 ];
 
-// Панель фільтрів: контролі під керуванням батьківської сторінки,
-// значення зберігаються в query-параметрах URL
+
 export default function Filters({
   categories,
   filters,
@@ -98,7 +97,7 @@ export default function Filters({
   );
 }
 
-// Короткий запис ціни без повного форматування валютою
+
 function money_short(value) {
   return `$${value}`;
 }

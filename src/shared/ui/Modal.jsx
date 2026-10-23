@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-// Модальне вікно через React Portal:
-// Esc закриває, клік поза вікном закриває, фокус повертається на кнопку-відкривач.
+
 export function Modal({ title, onClose, children }) {
   const ref = useRef(null);
 

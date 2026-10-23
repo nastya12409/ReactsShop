@@ -3,8 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppSelector } from '../../../app/hooks';
 import { recipientSchema } from '../../../shared/utils/validation';
 
-// Крок 1: дані одержувача. Попередні значення підставляються зі сховища,
-// тому "назад" повертає вже заповнені поля.
+
 export default function StepRecipient({ onNext }) {
   const data = useAppSelector((state) => state.checkout.data);
   const user = useAppSelector((state) => state.auth.user);

@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Багатокрокове оформлення: дані кроків живуть у сховищі,
-// тому кнопка "назад" повертає користувача до вже заповнених полів.
+
 export const CHECKOUT_STEPS = ['Дані одержувача', 'Доставка', 'Оплата'];
 
 const checkoutSlice = createSlice({

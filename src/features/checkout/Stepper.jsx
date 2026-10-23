@@ -1,6 +1,6 @@
 import { CHECKOUT_STEPS } from './checkoutSlice';
 
-// Індикатор кроків оформлення: поточний крок підсвічений і доступний
+
 export default function Stepper({ current }) {
   return (
     <ol className="stepper" aria-label="Кроки оформлення замовлення">

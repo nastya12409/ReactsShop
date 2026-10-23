@@ -9,7 +9,7 @@ import { money } from '../shared/utils/money';
 import Rating from '../shared/ui/Rating';
 import { Skeleton } from '../shared/ui/Skeleton';
 
-// Сторінка товару: галерея, характеристики, відгуки, схожі товари
+
 export default function ProductPage() {
   const { id } = useParams();
   const dispatch = useAppDispatch();
@@ -20,7 +20,7 @@ export default function ProductPage() {
   const isFavorite = useAppSelector(selectIsFavorite(Number(id)));
 
   const [activeImage, setActiveImage] = useState('');
-  // Скидаємо галерею при зміні товару: pattern "коригування стану під час рендеру"
+  
   const [prevThumb, setPrevThumb] = useState(undefined);
   if (product?.thumbnail !== prevThumb) {
     setPrevThumb(product?.thumbnail);

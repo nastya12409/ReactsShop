@@ -1,4 +1,4 @@
-// Пагінація: кнопки-номери з "трьома крапками" для великої кількості сторінок
+
 function pageList(current, total) {
   if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
   const pages = new Set([1, total, current - 1, current, current + 1]);

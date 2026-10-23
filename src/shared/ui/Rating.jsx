@@ -1,4 +1,4 @@
-// Рейтинг зірочками з aria-підписом для скрінрідерів
+
 export default function Rating({ value = 0, count }) {
   const full = Math.round(value);
   return (

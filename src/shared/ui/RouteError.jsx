@@ -1,6 +1,5 @@
 import { Link, isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
-// Помилка маршруту (errorElement): наприклад, неіснуючий URL або битий запит
 export default function RouteError() {
   const error = useRouteError();
   const notFound = isRouteErrorResponse(error) && error.status === 404;

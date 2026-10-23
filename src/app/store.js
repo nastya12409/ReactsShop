@@ -7,7 +7,7 @@ import auth from '../features/auth/authSlice';
 import checkout from '../features/checkout/checkoutSlice';
 import orders from '../features/orders/ordersSlice';
 
-// makeStore — фабрика, щоб у тестах отримувати чисте сховище без стану звідусіль
+
 export const makeStore = () => {
   const store = configureStore({
     reducer: {
@@ -21,7 +21,7 @@ export const makeStore = () => {
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),
   });
 
-  // Персистимо лише "живі" зрізи; кеш API у localStorage не пишемо
+  
   store.subscribe(() => {
     const state = store.getState();
     save('reactshop:cart', state.cart);

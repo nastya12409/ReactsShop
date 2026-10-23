@@ -6,8 +6,7 @@ import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { login } from '../features/auth/authSlice';
 import { loginSchema } from '../shared/utils/validation';
 
-// Вхід: форма zodResolver + залогінення через власний сервіс-імітацію.
-// Після входу повертаємось на сторінку, з якої прийшли.
+ 
 export default function LoginPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

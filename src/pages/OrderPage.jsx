@@ -6,7 +6,7 @@ import { money } from '../shared/utils/money';
 const DELIVERY_LABEL = { nova: 'Нова Пошта', courier: 'Кур’єр', pickup: 'Самовивіз' };
 const PAYMENT_LABEL = { card: 'Карта онлайн', cash: 'Готівкою при отриманні' };
 
-// Сторінка-підтвердження замовлення та його склад
+
 export default function OrderPage() {
   const { id } = useParams();
   const order = useAppSelector(selectOrderById(id));

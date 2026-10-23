@@ -5,7 +5,7 @@ import { PrivateRoute } from '../features/auth/PrivateRoute';
 import RouteError from '../shared/ui/RouteError';
 import Spinner from '../shared/ui/Spinner';
 
-// Ледаче завантаження кожної сторінки: React.lazy + Suspense
+
 const ProductsPage = lazy(() => import('../pages/ProductsPage'));
 const ProductPage = lazy(() => import('../pages/ProductPage'));
 const CartPage = lazy(() => import('../pages/CartPage'));

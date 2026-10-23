@@ -5,8 +5,7 @@ import { logout } from '../features/auth/authSlice';
 import { useAutoLogout } from '../features/auth/useAutoLogout';
 import { selectCartCount } from '../features/cart/cartSlice';
 
-// Каркас застосунку: шапка з навігацією, лічильниками та входом.
-// Тут же "висить" автоматичний вихід по завершенню токена.
+
 export default function Layout() {
   useAutoLogout();
   const dispatch = useAppDispatch();
@@ -16,7 +15,7 @@ export default function Layout() {
   const favCount = useAppSelector((state) => state.favorites.length);
   const user = useAppSelector((state) => state.auth.user);
 
-  // Скидаємо стан повідомлень між сторінками (напр., expired у LoginPage)
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);

@@ -3,7 +3,7 @@ import { useAppDispatch } from '../../app/hooks';
 import { decQty, incQty, removeFromCart, setQty } from './cartSlice';
 import { money, unitPrice } from '../../shared/utils/money';
 
-// Рядок кошика: кількість, підсумок, видалення
+
 export function CartItemRow({ item }) {
   const dispatch = useAppDispatch();
 

@@ -16,8 +16,7 @@ import {
 import { placeOrder } from '../features/orders/ordersSlice';
 import { money } from '../shared/utils/money';
 
-// Багатокрокове оформлення: 3 кроки + підсумок.
-// Дані кроків живуть у Redux, тому "назад" нічого не втрачає.
+
 export default function CheckoutPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -55,12 +54,12 @@ export default function CheckoutPage() {
     dispatch(setStep(2));
   };
 
-  // Підтвердження: створюємо замовлення, чистимо кошик, ідемо на сторінку замовлення
+  
   const confirmOrder = (values) => {
     setSubmitting(true);
     const data = { ...checkoutData, ...values };
     dispatch(fillData(data));
-    // Звичайний (не асинхронний) екшен повертає payload з id замовлення
+
     const action = dispatch(
       placeOrder({
         customer: { ...data, username: user.username },

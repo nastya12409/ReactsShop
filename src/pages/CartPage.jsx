@@ -12,7 +12,6 @@ import {
 import { CartItemRow } from '../features/cart/CartItemRow';
 import { PROMOS, money } from '../shared/utils/money';
 
-// Кошик: кількість, суми, промокод. Дані — у Redux + localStorage
 export default function CartPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();

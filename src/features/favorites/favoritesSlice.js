@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { load } from '../../shared/utils/storage';
 
-// Обране зберігаємо об'єктами (не id), щоб сторінка /favorites
-// працювала без повторного запиту до API
+
 const favoritesSlice = createSlice({
   name: 'favorites',
   initialState: load('reactshop:favorites', []),

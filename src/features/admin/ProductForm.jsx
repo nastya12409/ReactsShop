@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Modal } from '../../shared/ui/Modal';
 import { productSchema } from '../../shared/utils/validation';
 
-// Форма товару (додавання/редагування) в модальному вікні
+
 export default function ProductForm({ product, onClose, onSubmit, saving, error }) {
   const {
     register,

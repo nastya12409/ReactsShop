@@ -5,7 +5,7 @@ import { addToCart } from '../features/cart/cartSlice';
 import { money } from '../shared/utils/money';
 import Rating from '../shared/ui/Rating';
 
-// Сторінка обраного: список збережених товарів + швидке додавання в кошик
+
 export default function FavoritesPage() {
   const dispatch = useAppDispatch();
   const favorites = useAppSelector((state) => state.favorites);

@@ -1,7 +1,6 @@
 import { z } from 'zod';
 
-// Схеми валідації форм: використовуються і в UI (react-hook-form),
-// і в тестах — одне джерело правди для перевірки даних.
+
 
 export const loginSchema = z.object({
   username: z.string().min(3, 'Логін — щонайменше 3 символи'),
@@ -22,7 +21,7 @@ export const registerSchema = z
     path: ['confirm'],
   });
 
-// Крок 1 оформлення замовлення — дані одержувача
+
 export const recipientSchema = z.object({
   firstName: z.string().min(2, 'Вкажіть ім’я'),
   lastName: z.string().min(2, 'Вкажіть прізвище'),
@@ -30,19 +29,19 @@ export const recipientSchema = z.object({
   phone: z.string().regex(/^\+?[0-9][0-9\s-]{8,14}$/, 'Телефон у форматі +380XXXXXXXXX'),
 });
 
-// Крок 2 — доставка
+
 export const deliverySchema = z.object({
   city: z.string().min(2, 'Вкажіть місто'),
   address: z.string().min(5, 'Вкажіть відділення або адресу'),
   delivery: z.enum(['nova', 'courier', 'pickup'], { message: 'Оберіть спосіб доставки' }),
 });
 
-// Крок 3 — оплата
+
 export const paymentSchema = z.object({
   payment: z.enum(['card', 'cash'], { message: 'Оберіть спосіб оплати' }),
 });
 
-// Форма товару в адмін-розділі
+
 export const productSchema = z.object({
   title: z.string().min(3, 'Назва — щонайменше 3 символи'),
   category: z.string().min(2, 'Вкажіть категорію'),

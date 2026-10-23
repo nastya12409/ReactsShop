@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { load, save } from '../../shared/utils/storage';
 
-// ВЛАСНА ІМІТАЦІЯ СЕРВІСУ АВТОРИЗАЦІЇ (методичка дозволяє).
-// Користувачі живуть у localStorage; токен — "підроблений JWT"
-// з часом життя, щоб реалізувати автоматичний вихід.
+
 
 const USERS_KEY = 'reactshop:users';
 const SESSION_KEY = 'reactshop:session';
@@ -32,7 +30,7 @@ const seedUsers = [
 
 const allUsers = () => [...seedUsers, ...load(USERS_KEY, [])];
 
-// Публічна частина профілю — пароль у стан не потрапляє
+
 const publicUser = ({ username, firstName, lastName, email, role, address }) => ({
   username,
   firstName,
@@ -67,7 +65,7 @@ export const register = createAsyncThunk('auth/register', async (form, { rejectW
   return { user: publicUser(user), token: makeToken(username), exp: Date.now() + TOKEN_TTL };
 });
 
-// Сесія переживає перезавантаження, якщо токен ще дійсний
+
 const saved = load(SESSION_KEY, null);
 const alive = saved && saved.user && saved.exp > Date.now();
 
@@ -77,7 +75,7 @@ const authSlice = createSlice({
     user: alive ? saved.user : null,
     token: alive ? saved.token : null,
     exp: alive ? saved.exp : null,
-    status: 'idle', // idle | loading | succeeded | failed
+    status: 'idle', 
     error: null,
   },
   reducers: {

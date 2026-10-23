@@ -6,7 +6,7 @@ import { money } from '../shared/utils/money';
 
 const DELIVERY_LABEL = { nova: 'Нова Пошта', courier: 'Кур’єр', pickup: 'Самовивіз' };
 
-// Профіль: дані користувача (редагування) + історія замовлень
+
 export default function ProfilePage() {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.auth.user);
